@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pukhovkirill.mapsketch.repository.GeoObjectRepository">
+
+    <insert id="saveAll"
+            parameterType="java.util.List"
+            useGeneratedKeys="true"
+            keyProperty="id"
+            flushCache="true">
+        insert into geo_objects (name, type, coordinates)
+        values
+        <foreach item="item" collection="list" separator=",">
+            (#{item.name}, #{item.type}, #{item.coordinates})
+        </foreach>
+    </insert>
+
+    <update id="update"
+            parameterType="map"
+            flushCache="true">
+        update geo_objects
+        set
+            name        = #{param2.name},
+            type        = #{param2.type},
+            coordinates = #{param2.coordinates}
+        where id = #{param1}
+    </update>
+
+    <delete id="deleteById"
+            parameterType="long"
+            flushCache="true">
+        delete from geo_objects
+        where id = #{param1}
+    </delete>
+
+    <select id="findById"
+            parameterType="long"
+            resultType="com.pukhovkirill.mapsketch.entity.GeoObject"
+            flushCache="true">
+        select id, name, type, coordinates
+        from geo_objects
+        where id = #{param1}
+    </select>
+
+    <select id="findAll"
+            resultType="com.pukhovkirill.mapsketch.entity.GeoObject"
+            flushCache="true">
+        select id, name, type, coordinates
+        from geo_objects
+    </select>
+
+</mapper>

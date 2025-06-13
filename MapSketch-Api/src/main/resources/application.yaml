@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: MapSketch-Api
+  profiles:
+    active: dev

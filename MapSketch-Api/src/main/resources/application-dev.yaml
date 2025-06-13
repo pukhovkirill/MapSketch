@@ -1,0 +1,21 @@
+spring:
+  config:
+    import: "optional:file:.env[.properties]"
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    url: jdbc:postgresql://localhost:5433/${DATABASE_NAME}
+
+cors:
+  allowed-origins: http://localhost:3000,http://localhost:5173,http://localhost/
+
+mybatis:
+  configuration:
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath*:mappers/*-mapper.xml
+
+logging:
+  level:
+    com.pukhovkirill.mapsketch: trace

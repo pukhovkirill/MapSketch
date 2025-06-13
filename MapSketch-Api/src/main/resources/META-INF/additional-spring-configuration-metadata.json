@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "cors.allowed-origins",
+      "type": "java.lang.String",
+      "description": "List of allowed web domains."
+  }
+] }
