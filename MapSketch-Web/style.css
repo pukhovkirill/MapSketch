@@ -1,0 +1,134 @@
+body {
+  margin: 15px;
+  padding: 0px;
+  font-family: Arial, sans-serif;
+}
+
+.left-rounded {
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+li, div, span {
+  caret-color: transparent;
+}
+
+.container {
+  display: flex;
+  height: 96vh;
+  width: 100%;
+  background-color: rgba(43, 48, 53, 0.05);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: rgba(43, 48, 53, 0.05);
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  display: flex; 
+  justify-content: center;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+#map {
+  width: 600px;
+  height: 400px;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  overflow: hidden;
+}
+/* Список объектов */
+#object-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin: 0 10px;
+  padding: 0;
+  list-style: none;
+}
+
+#object-list li {
+  padding: 8px;
+  margin-bottom: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#object-list li:hover {
+  background-color: #e6f7ff;
+}
+
+.toolbar {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  background-color: rgba(43, 48, 53, 0.1);
+}
+
+.toolbar button {
+  flex: 1 0 45%;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #888;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.toolbar button.active {
+  background-color: #1890ff;
+  color: #fff;
+  border-color: #1890ff;
+}
+
+#map {
+  flex-grow: 1;
+  width: 70%; 
+  height: 100%;
+  float: right;
+}
+
+.ol-popup {
+  position: top;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  min-width: 150px;
+}
+
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}
+.ol-popup .popup-content {
+  font-size: 14px;
+}
+.ol-popup .popup-content button {
+  margin-top: 8px;
+  padding: 4px 8px;
+  font-size: 13px;
+  cursor: pointer;
+}

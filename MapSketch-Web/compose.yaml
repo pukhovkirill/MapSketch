@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  mapsketch-web:
+    build: .
+    image: mapsketch-web
+    container_name: mapsketch-web
+    ports:
+      - "80:80"
